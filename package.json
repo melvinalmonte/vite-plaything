@@ -15,7 +15,8 @@
     "framer-motion": "^6.2.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "react-step-wizard": "^5.3.11"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
