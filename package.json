@@ -1,0 +1,25 @@
+{
+  "name": "vite-aws",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build --base /dev/ && aws s3 sync ./dist/ s3://my-react-app-s3-bucket/"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.8.3",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "framer-motion": "^6.2.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.0.7",
+    "prettier": "^2.5.1",
+    "vite": "^2.8.0"
+  }
+}
