@@ -14,7 +14,7 @@ import {
 import { FaClipboardCheck, FaRss } from "react-icons/fa";
 import { AiFillGift } from "react-icons/ai";
 import { BsGearFill } from "react-icons/bs";
-import { FiMenu, FiSearch } from "react-icons/fi";
+import { FiMenu } from "react-icons/fi";
 import { HiCode, HiCollection } from "react-icons/hi";
 import { MdHome, MdKeyboardArrowRight } from "react-icons/md";
 import React from "react";
@@ -62,7 +62,7 @@ const SidebarContent = (props) => {
       pos="fixed"
       //   top="0"
       left="0"
-      zIndex="-1"
+      //   zIndex={"sticky"}
       h="full"
       pb="10"
       overflowX="hidden"
@@ -80,10 +80,21 @@ const SidebarContent = (props) => {
         color="gray.600"
         aria-label="Main Navigation"
       >
-        <NavItem icon={MdHome}>Home</NavItem>
-        <NavItem icon={FaRss}>Articles</NavItem>
-        <NavItem icon={HiCollection}>Collections</NavItem>
-        <NavItem icon={FaClipboardCheck}>Checklists</NavItem>
+        <NavItem onClick={() => console.log("Home")} icon={MdHome}>
+          Home
+        </NavItem>
+        <NavItem onClick={() => console.log("Articles")} icon={FaRss}>
+          Articles
+        </NavItem>
+        <NavItem onClick={() => console.log("Collections")} icon={HiCollection}>
+          Collections
+        </NavItem>
+        <NavItem
+          onClick={() => console.log("Checklists")}
+          icon={FaClipboardCheck}
+        >
+          Checklists
+        </NavItem>
         <NavItem icon={HiCode} onClick={integrations.onToggle}>
           Integrations
           <Icon
@@ -93,18 +104,22 @@ const SidebarContent = (props) => {
           />
         </NavItem>
         <Collapse in={integrations.isOpen}>
-          <NavItem pl="12" py="2">
+          <NavItem onClick={() => console.log("Shopify")} pl="12" py="2">
             Shopify
           </NavItem>
-          <NavItem pl="12" py="2">
+          <NavItem onClick={() => console.log("Slack")} pl="12" py="2">
             Slack
           </NavItem>
-          <NavItem pl="12" py="2">
+          <NavItem onClick={() => console.log("Zapier")} pl="12" py="2">
             Zapier
           </NavItem>
         </Collapse>
-        <NavItem icon={AiFillGift}>Changelog</NavItem>
-        <NavItem icon={BsGearFill}>Settings</NavItem>
+        <NavItem onClick={() => console.log("Changelog")} icon={AiFillGift}>
+          Changelog
+        </NavItem>
+        <NavItem onClick={() => console.log("Settings")} icon={BsGearFill}>
+          Settings
+        </NavItem>
       </Flex>
     </Box>
   );
@@ -114,7 +129,6 @@ const SideBar = ({ children }) => {
   const sidebar = useDisclosure();
   return (
     <Box as="section">
-      <HStack></HStack>
       <SidebarContent display={{ base: "none", md: "unset" }} />
       <Drawer
         isOpen={sidebar.isOpen}
@@ -145,7 +159,9 @@ const SideBar = ({ children }) => {
         </Flex>
 
         <Box as="main" p="4">
-          {children}
+          <Box maxHeight={"61vh"} overflow={"auto"} as={"div"}>
+            {children}
+          </Box>
         </Box>
       </Box>
     </Box>

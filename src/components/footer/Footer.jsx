@@ -10,6 +10,7 @@ const Footer = () => {
       pl={5}
       pr={5}
       py={{ base: "12", md: "16" }}
+      zIndex={"sticky"}
     >
       <Stack spacing={{ base: "4", md: "5" }}>
         <Stack justify="space-between" direction="row" align="center">
