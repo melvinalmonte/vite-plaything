@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "vite build --base /dev/ && aws s3 sync ./dist/ s3://{bucket_to_sync}/"
+    "deploy": "vite build --base /dev/ && aws s3 sync ./dist/ s3://my-react-app-s3-bucket/"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.3",

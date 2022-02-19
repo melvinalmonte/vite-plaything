@@ -1,10 +1,16 @@
 import React from "react";
-import { ButtonGroup, chakra, IconButton, Stack, Text } from "@chakra-ui/react";
+import { ButtonGroup, chakra, IconButton, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/all";
 
 const Footer = () => {
   return (
-    <chakra.footer flexShrink={0} pl={5} pr={5} py={{ base: "12", md: "16" }}>
+    <chakra.footer
+      bg={useColorModeValue("white", "gray.800")}
+      flexShrink={0}
+      pl={5}
+      pr={5}
+      py={{ base: "12", md: "16" }}
+    >
       <Stack spacing={{ base: "4", md: "5" }}>
         <Stack justify="space-between" direction="row" align="center">
           <Text>Footer logo</Text>
