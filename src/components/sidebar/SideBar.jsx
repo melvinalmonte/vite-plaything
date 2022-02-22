@@ -80,22 +80,35 @@ const SidebarContent = (props) => {
         color="gray.600"
         aria-label="Main Navigation"
       >
-        <NavItem onClick={() => console.log("Home")} icon={MdHome}>
+        <NavItem
+          fontSize={"sm"}
+          onClick={() => console.log("Home")}
+          icon={MdHome}
+        >
           Home
         </NavItem>
-        <NavItem onClick={() => console.log("Articles")} icon={FaRss}>
+        <NavItem
+          fontSize={"sm"}
+          onClick={() => console.log("Articles")}
+          icon={FaRss}
+        >
           Articles
         </NavItem>
-        <NavItem onClick={() => console.log("Collections")} icon={HiCollection}>
+        <NavItem
+          fontSize={"sm"}
+          onClick={() => console.log("Collections")}
+          icon={HiCollection}
+        >
           Collections
         </NavItem>
         <NavItem
+          fontSize={"sm"}
           onClick={() => console.log("Checklists")}
           icon={FaClipboardCheck}
         >
           Checklists
         </NavItem>
-        <NavItem icon={HiCode} onClick={integrations.onToggle}>
+        <NavItem fontSize={"sm"} icon={HiCode} onClick={integrations.onToggle}>
           Integrations
           <Icon
             as={MdKeyboardArrowRight}
@@ -104,20 +117,43 @@ const SidebarContent = (props) => {
           />
         </NavItem>
         <Collapse in={integrations.isOpen}>
-          <NavItem onClick={() => console.log("Shopify")} pl="12" py="2">
+          <NavItem
+            fontSize={"sm"}
+            onClick={() => console.log("Shopify")}
+            pl="12"
+            py="2"
+          >
             Shopify
           </NavItem>
-          <NavItem onClick={() => console.log("Slack")} pl="12" py="2">
+          <NavItem
+            fontSize={"sm"}
+            onClick={() => console.log("Slack")}
+            pl="12"
+            py="2"
+          >
             Slack
           </NavItem>
-          <NavItem onClick={() => console.log("Zapier")} pl="12" py="2">
+          <NavItem
+            fontSize={"sm"}
+            onClick={() => console.log("Zapier")}
+            pl="12"
+            py="2"
+          >
             Zapier
           </NavItem>
         </Collapse>
-        <NavItem onClick={() => console.log("Changelog")} icon={AiFillGift}>
+        <NavItem
+          fontSize={"sm"}
+          onClick={() => console.log("Changelog")}
+          icon={AiFillGift}
+        >
           Changelog
         </NavItem>
-        <NavItem onClick={() => console.log("Settings")} icon={BsGearFill}>
+        <NavItem
+          fontSize={"sm"}
+          onClick={() => console.log("Settings")}
+          icon={BsGearFill}
+        >
           Settings
         </NavItem>
       </Flex>
@@ -159,7 +195,7 @@ const SideBar = ({ children }) => {
         </Flex>
 
         <Box as="main" p="4">
-          <Box maxHeight={"61vh"} overflow={"auto"} as={"div"}>
+          <Box className="content" maxHeight={"61vh"} overflow={"auto"} as={"div"}>
             {children}
           </Box>
         </Box>

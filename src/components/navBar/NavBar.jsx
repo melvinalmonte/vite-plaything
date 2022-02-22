@@ -28,12 +28,12 @@ const NavBar = () => {
 
   return (
     <React.Fragment>
-      <chakra.header w="full" px={{ base: 2, sm: 4 }} py={4} shadow="md">
+      <chakra.header zIndex={1} w="full" px={{ base: 2, sm: 4 }} py={4} shadow="md">
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
           <Flex>
             <chakra.a display="flex" alignItems="center">
               <Image
-                boxSize={"50px"}
+                boxSize={"30px"}
                 borderRadius={"full"}
                 objectFit={"cover"}
                 src={logo}
@@ -43,7 +43,7 @@ const NavBar = () => {
             </chakra.a>
             <chakra.h1
               alignSelf={"center"}
-              fontSize="xl"
+              fontSize="lg"
               fontWeight="medium"
               ml="2"
             >
@@ -57,12 +57,15 @@ const NavBar = () => {
               color="brand.500"
               display={{ base: "none", md: "inline-flex" }}
             >
-              <Text>Bob</Text>
-              <Button borderRadius={"full"}>Logout</Button>
+              <Text fontSize={"sm"}>Bob</Text>
+              <Button borderRadius={"full"} size={"sm"}>
+                Logout
+              </Button>
               <IconButton
                 icon={<CgDarkMode />}
                 aria-label={"color-mode"}
                 onClick={toggleColorMode}
+                size={"sm"}
               />
             </HStack>
             <Box display={{ base: "inline-flex", md: "none" }}>
@@ -96,14 +99,15 @@ const NavBar = () => {
                     onClick={mobileNav.onClose}
                   />
 
-                  <Text>Bob</Text>
-                  <Button borderRadius={"full"} w="full">
+                  <Text fontSize={"sm"}>Bob</Text>
+                  <Button borderRadius={"full"} w="full" size={"sm"}>
                     Logout
                   </Button>
                   <IconButton
                     icon={<CgDarkMode />}
                     aria-label={"color-mode"}
                     onClick={toggleColorMode}
+                    size={"sm"}
                   />
                 </VStack>
               </Fade>

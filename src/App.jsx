@@ -4,7 +4,6 @@ import { First, Fourth, Second, Third } from "./components/steps/Steps";
 import { Wizard } from "./components/wizard";
 
 function App() {
-  const repeat = [...Array(100).keys()];
   return (
     <Layout>
       <SideBar>
